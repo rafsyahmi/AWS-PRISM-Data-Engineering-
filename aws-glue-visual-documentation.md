@@ -19,11 +19,14 @@ Things to consider
 ![Name Visual ETL file](./images/name_visual_etl_file.png)
 
 ### 2. Set the job details (minimal things to do)
- - IAM Role : AWSGlueServiceRole
+
+![job_details](./images/job_details.png)
+
+ - IAM Role : select 'AWSGlueServiceRole'
  - Glue Version : Default selection
- - Language : Default Selection (Phyton 3)
- - Worker type : choose minimal G 2x (the higher the type , processing will be fast but it will incur more cost!!)
- - Requested number of workers : set it to minimal 2 (the more the worker , the higher the cost charge!!)
+ - Language : Default Selection ('Phyton 3')
+ - Worker type : choose minimal 'G 2x' (the higher the type , processing will be fast but it will incur more cost!!)
+ - Requested number of workers : set it to minimal '2'or more (the more the worker , the higher the cost charge!!)
 
 ### 3. Add node (click on the blue '+' button at top right of the canvas)
 
