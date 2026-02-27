@@ -1,4 +1,4 @@
-# Visual ETL Data Ingestion: NMRR Sites Description (Bronze Layer)
+# Visual ETL Data Ingestion to Bronze
 
 ## 📌 Overview
 This job takes the raw `nmrr_sites_description.csv` file from our landing S3 bucket, cleans up the data types, checks for empty files, and saves it as a modern Iceberg table in the Bronze layer.
@@ -70,10 +70,10 @@ The cleaned data is saved to our Glue Data Catalog.
 
 ### SQL syntax function *replace '<.....>' with relevant information, do not delete other symbol shown in the syntax
 1) Preview Schema 
-- DESCRIBE <table_name>; -- for file that is not in Iceberg Apache format e.g. CSV,JSON, etc2
-- DESCRIBE FORMATTED <table_name>; --for file in Iceberg Apache format
+- DESCRIBE [table_name]; -- for file that is not in Iceberg Apache format e.g. CSV,JSON, etc2
+- DESCRIBE FORMATTED [table_name]; --for file in Iceberg Apache format
 
 2) Change Data Type
-- SELECT *, CAST(<header_date_column_name> AS DATE) AS <new_header_date_column_name> FROM <"database/schema_location">.<"table_name">  limit 10; -- to change data type related to date 
+- SELECT *, CAST([header_date_column_name] AS DATE) AS [new_header_date_column_name] FROM "[database/schema_location]"."[table_name]"  limit 10; -- to change data type related to date 
 
-* CAST will create a new column with the newly assigned data type 
+**CAST will create a new column with the newly assigned data type** 
