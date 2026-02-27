@@ -64,5 +64,16 @@ The cleaned data is saved to our Glue Data Catalog.
 
 ### 4. Save the visual ETL file , then click "RUN"
 - progress of the job run can be monitored in the 'Job Run Monitoring' menu on the left 
+- successful job indicate that the ingestion and creation of data catalogue with a table has been successfully created in the target S3 bucket
 
 ![menu_listing](./images/menu_listing.png)
+
+### SQL syntax function *replace '<.....>' with relevant information, do not delete other symbol shown in the syntax
+1) Preview Schema 
+- DESCRIBE <table_name>; -- for file that is not in Iceberg Apache format e.g. CSV,JSON, etc2
+- DESCRIBE FORMATTED <table_name>; --for file in Iceberg Apache format
+
+2) Change Data Type
+- SELECT *, CAST(<header_date_column_name> AS DATE) AS <new_header_date_column_name> FROM <"database/schema_location">.<"table_name">  limit 10; -- to change data type related to date 
+
+* CAST will create a new column with the newly assigned data type 
